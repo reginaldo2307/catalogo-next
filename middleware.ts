@@ -23,7 +23,7 @@ export default async function middleware(req: NextRequest) {
 
 
 
-  const data = await getHostnameDataOrDefault(currentHost)
+  const data = await getHostnameDataOrDefault(currentHost);
 
   // Prevent security issues – users should not be able to canonically access
   // the pages/sites folder and its respective contents.
@@ -32,7 +32,7 @@ export default async function middleware(req: NextRequest) {
   } else {
     // console.log('URL 2', req.nextUrl.href)
     // rewrite to the current subdomain under the pages/sites folder
-    url.pathname = `/_sites/${data.subdomain}${url.pathname}`
+    url.pathname = `/_sites/${data?.subdomain}${url.pathname}`;
   }
 
   return NextResponse.rewrite(url)
