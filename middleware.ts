@@ -16,9 +16,11 @@ export default async function middleware(req: NextRequest) {
   // (in the case of "subdomain-3.localhost:3000", "localhost:3000" is the root URL)
   // process.env.NODE_ENV === "production" indicates that the app is deployed to a production environment
   // process.env.VERCEL === "1" indicates that the app is deployed on Vercel
-  const currentHost = process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-      ? hostname.replace(`.whaticketlk.online`, "success")
-      : hostname.replace(`.localhost:3000`, "success");
+  const currentHost =
+    process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
+      ? hostname
+        .replace(`.buildwithnext.com`, "")
+      : hostname.replace(`.localhost:3000`, "");
 
 
 

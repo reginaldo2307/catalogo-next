@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import styles from '../../../styles/Home.module.css';
 // we will create these in the next step
 import { getHostnameDataBySubdomain, getSubdomainPaths } from "@/lib/db";
 
@@ -25,11 +24,11 @@ export default function Index(props: Props) {
   }
 
   return (
-    <div className={styles.container}>
+    <>
       <h1>
         {props.name}
       </h1>
-    </div>
+    </>
   )
 }
 
